@@ -1,16 +1,16 @@
-const fruits = [
+const AddressBook = [
   {
-    name: "Apple",
-    color: "red",
-    isFavorite: true,
-    tags: ["delicios", "legendary"],
+    id: 1,
+    fullName: "Mochamad Irvan",
+    age: 20,
+    phone: "08123456789",
   },
   {
-    name: "Banana",
-    color: "blue",
-    isFavorite: false,
-    tags: ["legendary"],
+    id: 2,
+    fullName: "Irvan Mochamad",
+    age: 10,
+    phone: "0881080070700",
   },
 ];
 
-console.log("fruits:", fruits);
+console.log("Address Book:", AddressBook);
