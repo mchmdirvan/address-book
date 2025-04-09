@@ -1,4 +1,4 @@
-const AddressBook = [
+const contacts = [
   {
     id: 1,
     fullName: "Mochamad Irvan",
@@ -25,4 +25,4 @@ const AddressBook = [
   },
 ];
 
-console.log("Address Book:", AddressBook);
+console.log("Contacts:", contacts);
