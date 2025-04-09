@@ -3,7 +3,7 @@ const AddressBook = [
     id: 1,
     fullName: "Mochamad Irvan",
     age: 20,
-    phone: "08123456789",
+    phone: "+62-881-0800-70700",
     email: "mchmdirvaan@gmail.com",
     location: "Jakarta",
   },
@@ -11,9 +11,17 @@ const AddressBook = [
     id: 2,
     fullName: "Irvan Mochamad",
     age: 10,
-    phone: "0881080070700",
+    phone: "+62-852-1955-7750",
     email: "irvaanmchmd@gmail.com",
     location: "Bandung",
+  },
+  {
+    id: 3,
+    fullName: "Prabowo Subianto",
+    age: 70,
+    phone: "+62-812-3456-7890",
+    email: "prabowo@gmail.com",
+    location: "Bogor",
   },
 ];
 
