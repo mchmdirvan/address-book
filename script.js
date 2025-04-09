@@ -23,6 +23,14 @@ const contacts = [
     email: "prabowo@gmail.com",
     location: "Bogor",
   },
+  {
+    id: 4,
+    fullName: "Gibran Rakabuming Raka",
+    age: 40,
+    phone: "+62-812-3333-4444",
+    email: "gibran@gmail.com",
+    location: "Solo",
+  },
 ];
 
 console.log("Contacts:", contacts);
