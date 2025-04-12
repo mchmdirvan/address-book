@@ -45,14 +45,13 @@ function displayContacts() {
   //   );
   // });
   for (let index = 0; index < contacts.length; index++) {
-    // console.log(contacts[index]);
     const contact = contacts[index];
     console.log(
       `
-      🧑🏻 ${contact.fullName}, 
-      🎂 ${contact.age} years old, 
-      📞 ${contact.phone}, 
-      ✉️ ${contact.email},
+      🧑🏻 ${contact.fullName}
+      🎂 ${contact.age} years old
+      📞 ${contact.phone}
+      ✉️ ${contact.email}
       📍 ${contact.location}`
     );
   }
