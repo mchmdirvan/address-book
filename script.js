@@ -33,4 +33,29 @@ const contacts = [
   },
 ];
 
-console.log("Contacts:", contacts);
+function displayContacts() {
+  // contacts.map((contact) => {
+  //   console.log(
+  //     `
+  //     🧑🏻${contact.fullName},
+  //     🎂${contact.age} years old,
+  //     📞${contact.phone},
+  //     ✉️${contact.email},
+  //     📍${contact.location}`
+  //   );
+  // });
+  for (let index = 0; index < contacts.length; index++) {
+    // console.log(contacts[index]);
+    const contact = contacts[index];
+    console.log(
+      `
+      🧑🏻 ${contact.fullName}, 
+      🎂 ${contact.age} years old, 
+      📞 ${contact.phone}, 
+      ✉️ ${contact.email},
+      📍 ${contact.location}`
+    );
+  }
+}
+
+displayContacts();
