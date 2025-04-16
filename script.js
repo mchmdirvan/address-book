@@ -62,6 +62,18 @@ function addContact(fullName, age, phone, email, location) {
   displayContacts();
 }
 
+function searchContacts() {
+  //TODO
+}
+
+function deleteContact() {
+  //TODO
+}
+
+function updateContact() {
+  //TODO
+}
+
 addContact(
   "Adhitya Sofyan",
   40,
