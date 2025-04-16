@@ -34,27 +34,29 @@ const contacts = [
 ];
 
 function displayContacts() {
-  // contacts.map((contact) => {
-  //   console.log(
-  //     `
-  //     🧑🏻${contact.fullName},
-  //     🎂${contact.age} years old,
-  //     📞${contact.phone},
-  //     ✉️${contact.email},
-  //     📍${contact.location}`
-  //   );
-  // });
-  for (let index = 0; index < contacts.length; index++) {
-    const contact = contacts[index];
+  contacts.map((contact) => {
     console.log(
       `
-      🧑🏻 ${contact.fullName}
-      🎂 ${contact.age} years old
-      📞 ${contact.phone}
-      ✉️ ${contact.email}
-      📍 ${contact.location}`
+      🆔${contacts.id},
+      🧑🏻${contact.fullName},
+      🎂${contact.age} years old,
+      📞${contact.phone},
+      ✉️${contact.email},
+      📍${contact.location}`
     );
-  }
+  });
 }
 
+function addContact() {
+  contacts.push({
+    id: 5,
+    fullName: "Adhitya Sofyan",
+    age: 40,
+    phone: "+62812-8888-0000",
+    email: "adhitya@gmail.com",
+    location: "Yogyakarta",
+  });
+}
+
+addContact();
 displayContacts();
