@@ -47,18 +47,28 @@ function displayContacts() {
   });
 }
 
-function addContact() {
+function addContact(fullName, age, phone, email, location) {
   const nextId = contacts[contacts.length - 1].id + 1;
 
   contacts.push({
     id: nextId,
-    fullName: "Adhitya Sofyan",
-    age: 40,
-    phone: "+62812-8888-0000",
-    email: "adhitya@gmail.com",
-    location: "Yogyakarta",
+    fullName: fullName,
+    age: age,
+    phone: phone,
+    email: email,
+    location: location,
   });
+
+  displayContacts();
 }
 
-addContact();
-displayContacts();
+addContact(
+  "Adhitya Sofyan",
+  40,
+  "+62-888-0000-1111",
+  "adhitya@gmail.com",
+  "Yogyakarta"
+);
+addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
+
+// displayContacts();
