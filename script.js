@@ -63,7 +63,8 @@ function addContact(fullName, age, phone, email, location) {
 }
 
 function searchContacts() {
-  //TODO
+  const contact = contacts.find((contact) => contact.id === 3);
+  console.log(contact);
 }
 
 function deleteContact() {
@@ -84,3 +85,4 @@ addContact(
 addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
 
 // displayContacts();
+searchContacts();
