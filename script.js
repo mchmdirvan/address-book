@@ -37,7 +37,7 @@ function displayContacts() {
   contacts.map((contact) => {
     console.log(
       `
-      🆔${contacts.id},
+      🆔${contact.id},
       🧑🏻${contact.fullName},
       🎂${contact.age} years old,
       📞${contact.phone},
@@ -48,8 +48,10 @@ function displayContacts() {
 }
 
 function addContact() {
+  const nextId = contacts[contacts.length - 1].id + 1;
+
   contacts.push({
-    id: 5,
+    id: nextId,
     fullName: "Adhitya Sofyan",
     age: 40,
     phone: "+62812-8888-0000",
