@@ -1,4 +1,4 @@
-const dataContacts = [
+let dataContacts = [
   {
     id: 1,
     fullName: "Mochamad Irvan",
@@ -58,6 +58,7 @@ function addContact(fullName, age, phone, email, location) {
     location: location,
   };
   dataContacts.push(newContact);
+  return newContact;
 }
 
 function searchContacts(keyword) {
@@ -67,25 +68,28 @@ function searchContacts(keyword) {
   return foundContacts;
 }
 
-function deleteContact() {
-  //
+function deleteContact(id) {
+  const updatedContacts = dataContacts.filter((contact) => contact.id !== id);
+  dataContacts = updatedContacts;
 }
 
 function updateContact() {
   //
 }
 
-// -- --//
-displayContacts();
-addContact(
-  "Adhitya Sofyan",
-  40,
-  "+62-888-0000-1111",
-  "adhitya@gmail.com",
-  "Yogyakarta"
-);
-displayContacts();
-addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
-displayContacts();
+// displayContacts();
+// addContact(
+//   "Adhitya Sofyan",
+//   40,
+//   "+62-888-0000-1111",
+//   "adhitya@gmail.com",
+//   "Yogyakarta"
+// );
+// displayContacts();
+// addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
 
-console.log(searchContacts("Irvan"));
+// console.log(searchContacts("Irvan"));
+
+displayContacts();
+deleteContact(1);
+displayContacts();
