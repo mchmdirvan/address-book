@@ -1,4 +1,4 @@
-const contacts = [
+const dataContacts = [
   {
     id: 1,
     fullName: "Mochamad Irvan",
@@ -34,7 +34,7 @@ const contacts = [
 ];
 
 function displayContacts() {
-  contacts.map((contact) => {
+  dataContacts.foreach((contact) => {
     console.log(
       `
       🆔${contact.id},
@@ -48,33 +48,35 @@ function displayContacts() {
 }
 
 function addContact(fullName, age, phone, email, location) {
-  const nextId = contacts[contacts.length - 1].id + 1;
-
-  contacts.push({
+  const nextId = dataContacts[dataContacts.length - 1].id + 1;
+  const newContact = {
     id: nextId,
     fullName: fullName,
     age: age,
     phone: phone,
     email: email,
     location: location,
-  });
-
-  displayContacts();
+  };
+  dataContacts.push({ newContact });
 }
 
-function searchContacts() {
-  const contact = contacts.find((contact) => contact.id === 3);
-  console.log(contact);
+function searchContacts(keyword) {
+  const foundContacts = dataContacts.filter((contact) =>
+    contact.fullName.includes(keyword)
+  );
+  return foundContacts;
 }
 
 function deleteContact() {
-  //TODO
+  //
 }
 
 function updateContact() {
-  //TODO
+  //
 }
 
+// -- --//
+displayContacts();
 addContact(
   "Adhitya Sofyan",
   40,
@@ -82,7 +84,6 @@ addContact(
   "adhitya@gmail.com",
   "Yogyakarta"
 );
+displayContacts();
 addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
-
-// displayContacts();
-searchContacts();
+displayContacts();
