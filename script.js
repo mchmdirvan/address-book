@@ -34,7 +34,7 @@ const dataContacts = [
 ];
 
 function displayContacts() {
-  dataContacts.foreach((contact) => {
+  dataContacts.forEach((contact) => {
     console.log(
       `
       🆔${contact.id},
@@ -57,7 +57,7 @@ function addContact(fullName, age, phone, email, location) {
     email: email,
     location: location,
   };
-  dataContacts.push({ newContact });
+  dataContacts.push(newContact);
 }
 
 function searchContacts(keyword) {
@@ -87,3 +87,5 @@ addContact(
 displayContacts();
 addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
 displayContacts();
+
+console.log(searchContacts("Irvan"));
