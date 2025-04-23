@@ -33,6 +33,9 @@ let dataContacts = [
   },
 ];
 
+// ------------------------------------------------------------------
+// FUNCTION
+// ------------------------------------------------------------------
 function displayContacts() {
   dataContacts.forEach((contact) => {
     console.log(
@@ -87,12 +90,16 @@ function updateContact(id, newContact) {
   dataContacts = updatedContacts;
 }
 
-// displayContacts();
-updateContact(2, {
-  fullName: "Adhitya Sofyan",
-  age: 40,
-  phone: "+62-812-0000-9999",
-  email: "adhitya@gmail.com",
-  city: "Yogyakarta",
-});
-displayContacts();
+// ------------------------------------------------------------------
+// DOM
+// ------------------------------------------------------------------
+
+const displayContactsElemet = document.getElementById("display-contacts");
+
+displayContactsElemet.innerHTML = dataContacts
+  .map((contact) => {
+    return `
+    <li>${contact.fullName} </li>
+    `;
+  })
+  .join("");
