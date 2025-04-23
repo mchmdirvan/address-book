@@ -74,22 +74,10 @@ function deleteContact(id) {
 }
 
 function updateContact() {
-  //
+  const updatedContacts = dataContacts.filter((contact) => contact.id !== id);
+  dataContacts = updatedContacts;
 }
 
-// -- --//
-// displayContacts();
-// addContact(
-//   "Adhitya Sofyan",
-//   40,
-//   "+62-888-0000-1111",
-//   "adhitya@gmail.com",
-//   "Yogyakarta"
-// );
-// displayContacts();
-// addContact("Ariel Noah", 40, "+62-888-0000-1111", "ariel@gmail.com", "Jakarta");
 displayContacts();
 deleteContact(2);
 displayContacts();
-
-// console.log(searchContacts("Irvan"));
