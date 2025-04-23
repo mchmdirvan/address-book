@@ -90,32 +90,33 @@ function updateContact(id, newContact) {
   dataContacts = updatedContacts;
 }
 
-// ------------------------------------------------------------------
-// DOM
-// ------------------------------------------------------------------
+function renderContacts() {
+  const displayContactsElemet = document.getElementById("display-contacts");
 
-const displayContactsElemet = document.getElementById("display-contacts");
+  displayContactsElemet.innerHTML = dataContacts
+    .map((contact) => {
+      return `
+      <li>
+      <h2>
+      ${contact.fullName}
+      </h2>
+      <p>
+      ${contact.email}
+      </p>
+       <p>
+      ${contact.phone}
+      </p>
+       <p>
+      ${contact.age}
+      </p>
+       <p>
+      ${contact.city}
+      </p>
+      </li>
+      `;
+    })
+    .join("");
+}
 
-displayContactsElemet.innerHTML = dataContacts
-  .map((contact) => {
-    return `
-    <li>
-    <h2>
-    ${contact.fullName}
-    </h2>
-    <p>
-    ${contact.email}
-    </p>
-     <p>
-    ${contact.phone}
-    </p>
-     <p>
-    ${contact.age}
-    </p>
-     <p>
-    ${contact.city}
-    </p>
-    </li>
-    `;
-  })
-  .join("");
+// ----- PROGRAM -----
+renderContacts();
