@@ -99,7 +99,23 @@ const displayContactsElemet = document.getElementById("display-contacts");
 displayContactsElemet.innerHTML = dataContacts
   .map((contact) => {
     return `
-    <li>${contact.fullName} </li>
+    <li>
+    <h2>
+    ${contact.fullName}
+    </h2>
+    <p>
+    ${contact.email}
+    </p>
+     <p>
+    ${contact.phone}
+    </p>
+     <p>
+    ${contact.age}
+    </p>
+     <p>
+    ${contact.city}
+    </p>
+    </li>
     `;
   })
   .join("");
