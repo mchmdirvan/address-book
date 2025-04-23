@@ -37,12 +37,12 @@ function displayContacts() {
   dataContacts.forEach((contact) => {
     console.log(
       `
-      🆔${contact.id},
-      🧑🏻${contact.fullName},
-      🎂${contact.age} years old,
-      📞${contact.phone},
-      ✉️${contact.email},
-      📍${contact.city}`
+      🆔 ${contact.id}
+      🧑🏻 ${contact.fullName}
+      🎂 ${contact.age} years old
+      📞 ${contact.phone}
+      ✉️ ${contact.email}
+      📍 ${contact.city}`
     );
   });
 }
@@ -63,7 +63,7 @@ function addContact(fullName, age, phone, email, city) {
 
 function searchContacts(keyword) {
   const foundContacts = dataContacts.filter((contact) =>
-    contact.fullName.includes(keyword)
+    contact.fullName.toLowerCase.includes(keyword.toLowerCase)
   );
   return foundContacts;
 }
