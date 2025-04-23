@@ -5,7 +5,7 @@ let dataContacts = [
     age: 20,
     phone: "+62-881-0800-70700",
     email: "mchmdirvaan@gmail.com",
-    location: "Jakarta",
+    city: "Jakarta",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ let dataContacts = [
     age: 10,
     phone: "+62-852-1955-7750",
     email: "irvaanmchmd@gmail.com",
-    location: "Bandung",
+    city: "Bandung",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ let dataContacts = [
     age: 70,
     phone: "+62-812-3456-7890",
     email: "prabowo@gmail.com",
-    location: "Bogor",
+    city: "Bogor",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ let dataContacts = [
     age: 40,
     phone: "+62-812-3333-4444",
     email: "gibran@gmail.com",
-    location: "Solo",
+    city: "Solo",
   },
 ];
 
@@ -42,12 +42,12 @@ function displayContacts() {
       🎂${contact.age} years old,
       📞${contact.phone},
       ✉️${contact.email},
-      📍${contact.location}`
+      📍${contact.city}`
     );
   });
 }
 
-function addContact(fullName, age, phone, email, location) {
+function addContact(fullName, age, phone, email, city) {
   const nextId = dataContacts[dataContacts.length - 1].id + 1;
   const newContact = {
     id: nextId,
@@ -55,7 +55,7 @@ function addContact(fullName, age, phone, email, location) {
     age: age,
     phone: phone,
     email: email,
-    location: location,
+    city: city,
   };
   dataContacts.push(newContact);
   return newContact;
@@ -73,11 +73,16 @@ function deleteContact(id) {
   dataContacts = updatedContacts;
 }
 
-function updateContact() {
-  const updatedContacts = dataContacts.filter((contact) => contact.id !== id);
-  dataContacts = updatedContacts;
+function updateContact(id, data) {
+  //
 }
 
 displayContacts();
-deleteContact(2);
+updateContact(2, {
+  fullName: "Adhitya Sofyan",
+  age: 40,
+  phone: "+62-812-0000-9999",
+  email: "adhitya@gmail.com",
+  city: "Yogyakarta",
+});
 displayContacts();
