@@ -73,12 +73,21 @@ function deleteContact(id) {
   dataContacts = updatedContacts;
 }
 
-function updateContact(id, data) {
-  const updatedContacts = dataContacts.filter((contact) => contact.id !== id);
+function updateContact(id, newContact) {
+  const updatedContacts = dataContacts.map((contact) => {
+    if (contact.id === id) {
+      return {
+        ...contact,
+        ...newContact,
+      };
+    } else {
+      return contact;
+    }
+  });
   dataContacts = updatedContacts;
 }
 
-displayContacts();
+// displayContacts();
 updateContact(2, {
   fullName: "Adhitya Sofyan",
   age: 40,
