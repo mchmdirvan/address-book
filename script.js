@@ -74,7 +74,8 @@ function deleteContact(id) {
 }
 
 function updateContact(id, data) {
-  //
+  const updatedContacts = dataContacts.filter((contact) => contact.id !== id);
+  dataContacts = updatedContacts;
 }
 
 displayContacts();
