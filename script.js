@@ -36,6 +36,7 @@ let dataContacts = [
 // ------------------------------------------------------------------
 // FUNCTION
 // ------------------------------------------------------------------
+
 function displayContacts() {
   dataContacts.forEach((contact) => {
     console.log(
@@ -91,32 +92,25 @@ function updateContact(id, newContact) {
 }
 
 function renderContacts() {
-  const displayContactsElemet = document.getElementById("display-contacts");
+  const contactsListElement = document.getElementById("contacts-list");
 
-  displayContactsElemet.innerHTML = dataContacts
+  contactsListElement.innerHTML = dataContacts
     .map((contact) => {
       return `
       <li>
-      <h2>
-      ${contact.fullName}
-      </h2>
-      <p>
-      ${contact.email}
-      </p>
-       <p>
-      ${contact.phone}
-      </p>
-       <p>
-      ${contact.age}
-      </p>
-       <p>
-      ${contact.city}
-      </p>
+        <h2>${contact.fullName}</h2>
+        <p>${contact.email}</p>
+        <p>${contact.phone}</p>
+        <p>${contact.age}</p>
+        <p>${contact.city}</p>
       </li>
       `;
     })
     .join("");
 }
 
-// ----- PROGRAM -----
+// ------------------------------------------------------------------
+// PROGRAM
+// ------------------------------------------------------------------
+
 renderContacts();
