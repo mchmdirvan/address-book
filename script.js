@@ -95,7 +95,7 @@ contactFormElement.addEventListener("submit", (event) => {
   const formData = new FormData(contactFormElement);
 
   const newContactFormData = {
-    fullName: String(formData.get("fullName")),
+    fullname: String(formData.get("fullname")),
     age: Number(formData.get("age")),
     email: String(formData.get("email")),
     phone: String(formData.get("phone")),
