@@ -75,6 +75,10 @@ function updateContact(id, newContact) {
   dataContacts = updatedContacts;
 }
 
+// ------------------------------------------------------------------
+// DOM
+// ------------------------------------------------------------------
+
 function renderContacts() {
   const contactsListElement = document.getElementById("contacts-list");
 
@@ -92,6 +96,16 @@ function renderContacts() {
     })
     .join("");
 }
+
+const contactFormElement = document.getElementById("contact-form");
+
+contactFormElement.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(contactFormElement);
+
+  console.log(formData.get("fullname"));
+});
 
 // ------------------------------------------------------------------
 // PROGRAM
