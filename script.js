@@ -1,5 +1,3 @@
-const contactFormElement = document.getElementById("contact-form");
-
 let dataContacts = [
   {
     id: 1,
@@ -39,7 +37,7 @@ function displayContacts() {
 
 function addContact(contactData) {
   const nextId = dataContacts[dataContacts.length - 1].id + 1;
-  allContacts.push({
+  dataContacts.push({
     id: nextId,
     ...contactData,
   });
@@ -89,20 +87,25 @@ function renderContacts() {
     .join("");
 }
 
-function submitContact(event) {
+const contactFormElement = document.getElementById("contact-form");
+
+contactFormElement.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const formData = new FormData(contactFormElement);
 
-  const newContactData = {
-    fullname: String(formData.get("fullname")),
+  const newContactFormData = {
+    fullName: String(formData.get("fullName")),
     age: Number(formData.get("age")),
-    phone: String(formData.get("phone")),
     email: String(formData.get("email")),
-    city: String(formData.get("city")),
+    phone: String(formData.get("phone")),
+    address: String(formData.get("address")),
   };
-  addContact(newContactData);
+
+  addContact(newContactFormData);
+
   renderContacts();
-}
+});
 
 // ------------------------------------------------------------------
 // PROGRAM
