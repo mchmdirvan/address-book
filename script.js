@@ -1,3 +1,5 @@
+const contactFormElement = document.getElementById("contact-form");
+
 let dataContacts = [
   {
     id: 1,
@@ -35,18 +37,12 @@ function displayContacts() {
   });
 }
 
-function addContact(fullName, age, phone, email, city) {
+function addContact(contactData) {
   const nextId = dataContacts[dataContacts.length - 1].id + 1;
-  const newContact = {
+  allContacts.push({
     id: nextId,
-    fullName: fullName,
-    age: age,
-    phone: phone,
-    email: email,
-    city: city,
-  };
-  dataContacts.push(newContact);
-  return newContact;
+    ...contactData,
+  });
 }
 
 function searchContacts(keyword) {
@@ -75,10 +71,6 @@ function updateContact(id, newContact) {
   dataContacts = updatedContacts;
 }
 
-// ------------------------------------------------------------------
-// DOM
-// ------------------------------------------------------------------
-
 function renderContacts() {
   const contactsListElement = document.getElementById("contacts-list");
 
@@ -97,15 +89,20 @@ function renderContacts() {
     .join("");
 }
 
-const contactFormElement = document.getElementById("contact-form");
-
-contactFormElement.addEventListener("submit", (event) => {
+function submitContact(event) {
   event.preventDefault();
-
   const formData = new FormData(contactFormElement);
 
-  console.log(formData.get("fullname"));
-});
+  const newContactData = {
+    fullname: String(formData.get("fullname")),
+    age: Number(formData.get("age")),
+    phone: String(formData.get("phone")),
+    email: String(formData.get("email")),
+    city: String(formData.get("city")),
+  };
+  addContact(newContactData);
+  renderContacts();
+}
 
 // ------------------------------------------------------------------
 // PROGRAM
