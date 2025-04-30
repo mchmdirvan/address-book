@@ -99,7 +99,7 @@ contactFormElement.addEventListener("submit", (event) => {
     age: Number(formData.get("age")),
     email: String(formData.get("email")),
     phone: String(formData.get("phone")),
-    address: String(formData.get("address")),
+    city: String(formData.get("city")),
   };
 
   addContact(newContactFormData);
