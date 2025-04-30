@@ -1,7 +1,7 @@
 let dataContacts = [
   {
     id: 1,
-    fullName: "Mochamad Irvan",
+    fullname: "Mochamad Irvan",
     age: 20,
     phone: "+62-881-0800-70700",
     email: "mchmdirvaan@gmail.com",
@@ -9,7 +9,7 @@ let dataContacts = [
   },
   {
     id: 2,
-    fullName: "Prabowo Subianto",
+    fullname: "Prabowo Subianto",
     age: 70,
     phone: "+62-812-3456-7890",
     email: "prabowo@gmail.com",
@@ -26,7 +26,7 @@ function displayContacts() {
     console.log(
       `
       🆔 ${contact.id}
-      🧑🏻 ${contact.fullName}
+      🧑🏻 ${contact.fullname}
       🎂 ${contact.age} years old
       📞 ${contact.phone}
       ✉️ ${contact.email}
@@ -45,7 +45,7 @@ function addContact(contactData) {
 
 function searchContacts(keyword) {
   const foundContacts = dataContacts.filter((contact) =>
-    contact.fullName.toLowerCase.includes(keyword.toLowerCase)
+    contact.fullname.toLowerCase.includes(keyword.toLowerCase)
   );
   return foundContacts;
 }
@@ -76,7 +76,7 @@ function renderContacts() {
     .map((contact) => {
       return `
       <li>
-        <h2>${contact.fullName}</h2>
+        <h2>${contact.fullname}</h2>
         <p>${contact.email}</p>
         <p>${contact.phone}</p>
         <p>${contact.age}</p>
@@ -95,7 +95,7 @@ contactFormElement.addEventListener("submit", (event) => {
   const formData = new FormData(contactFormElement);
 
   const newContactFormData = {
-    fullname: String(formData.get("fullname")),
+    fullName: String(formData.get("fullname")),
     age: Number(formData.get("age")),
     email: String(formData.get("email")),
     phone: String(formData.get("phone")),
