@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository is an apps to save address book of someone that important for us to communicate
+Address book is an application designed to store and manage contact information for important individuals in your network. It serves as a digital address book, allowing you to maintain essential communication details for professional and personal connections.
 
 ## Features
 
