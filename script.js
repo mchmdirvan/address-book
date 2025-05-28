@@ -79,7 +79,6 @@ function deleteContact(contacts, id) {
   const filteredContact = contacts.filter((contact) => {
     return contact.id !== id;
   });
-
   const dataContacts = filteredContact;
   renderContacts(dataContacts);
 }
@@ -104,7 +103,6 @@ function showContact(contacts, id) {
   const contact = contacts.find((contact) => {
     return contact.id === id;
   });
-
   renderContacts([contact]);
 }
 
@@ -135,4 +133,4 @@ function showContact(contacts, id) {
 //   isFavorited: true,
 // });
 
-showContact(dataContacts, 1);
+// showContact(dataContacts, 1);
