@@ -73,7 +73,7 @@ function addContact(contact, contactData) {
 
 function deleteContact(contacts, id) {
   const filteredContacts = contacts.filter((contact) => {
-    return contact.id !== id;
+    return contact.id !== id; //when use {} it's need to use return
   });
 
   dataContacts = filteredContacts;
