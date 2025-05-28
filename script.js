@@ -71,6 +71,15 @@ function addContact(contact, contactData) {
   renderContacts(newContacts);
 }
 
+function deleteContact(contacts, id) {
+  const filteredContacts = contacts.filter((contact) => {
+    return contact.id !== id;
+  });
+
+  dataContacts = filteredContacts;
+  renderContacts(dataContacts);
+}
+
 // renderContacts(dataContacts);
 // searchContacts(dataContacts, "ad");
 
@@ -82,3 +91,5 @@ function addContact(contact, contactData) {
 //   birthdate: new Date("2000-10-10"),
 //   isFavorited: true,
 // });
+
+deleteContact(dataContacts, 1);
