@@ -56,9 +56,9 @@ function searchContacts(contacts, keyword) {
   renderContacts(foundContacts);
 }
 
-function addContact(contact, contactData) {
+function addContact(contacts, contactData) {
   const newContact = {
-    id: contact[contact.length - 1].id + 1,
+    id: contacts[contacts.length - 1].id + 1,
     fullname: contactData.fullname,
     phone: contactData.phone,
     email: contactData.email,
@@ -67,15 +67,14 @@ function addContact(contact, contactData) {
     isFavorited: contactData.isFavorited,
   };
 
-  const newContacts = [...contact, newContact];
+  const newContacts = [...contacts, newContact];
   renderContacts(newContacts);
 }
 
 function deleteContact(contacts, id) {
   const filteredContacts = contacts.filter((contact) => {
-    return contact.id !== id; //when use {} it's need to use return
+    return contact.id !== id;
   });
-
   dataContacts = filteredContacts;
   renderContacts(dataContacts);
 }
@@ -92,4 +91,4 @@ function deleteContact(contacts, id) {
 //   isFavorited: true,
 // });
 
-deleteContact(dataContacts, 1);
+// deleteContact(dataContacts, 1);
