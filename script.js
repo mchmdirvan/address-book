@@ -76,10 +76,11 @@ function addContact(contacts, contactData) {
 }
 
 function deleteContact(contacts, id) {
-  const filteredContacts = contacts.filter((contact) => {
+  const filteredContact = contacts.filter((contact) => {
     return contact.id !== id;
   });
-  dataContacts = filteredContacts;
+
+  const dataContacts = filteredContact;
   renderContacts(dataContacts);
 }
 
@@ -94,6 +95,7 @@ function updateContact(contacts, id, contactData) {
       return contact;
     }
   });
+
   dataContacts = updatedContacts;
   renderContacts(dataContacts);
 }
