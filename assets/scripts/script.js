@@ -28,11 +28,6 @@ let dataContacts = [
   },
 ];
 
-localStorage.setItem("data-contacts", JSON.stringify(dataContacts));
-// console.log(localStorage.getItem("data-contacts"));
-console.log(JSON.parse(localStorage.getItem("data-contacts")));
-console.log(dataContacts);
-
 // ------------------------------------------------------------------
 // FUNCTION
 // ------------------------------------------------------------------
@@ -76,8 +71,8 @@ function addContact(contacts, contactData) {
     isFavorited: contactData.isFavorited,
   };
 
-  const newContacts = [...contacts, newContact];
-  renderContacts(newContacts);
+  dataContacts = [...contacts, newContact];
+  renderContacts(dataContacts);
 }
 
 function deleteContact(contacts, id) {
@@ -115,7 +110,7 @@ function showContact(contacts, id) {
 // PROGRAM
 // ------------------------------------------------------------------
 
-// renderContacts(JSON.parse(localStorage.getItem("data-contacts")));
+// renderContacts(dataContacts);
 // searchContacts(dataContacts, "ad");
 
 // addContact(dataContacts, {
