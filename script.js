@@ -1,4 +1,4 @@
-const dataContacts = [
+let dataContacts = [
   {
     id: 1,
     fullname: "Adhitya Sofyan",
@@ -6,6 +6,7 @@ const dataContacts = [
     email: "adhitya@gmail.com",
     city: "Yogyakarta",
     birthdate: new Date("1977/11/06"),
+    isFavorited: true,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const dataContacts = [
     email: "raditya@gmail.com",
     city: "Jakarta",
     birthdate: new Date("1984/12/28"),
+    isFavorited: false,
   },
   {
     id: 3,
@@ -22,11 +24,17 @@ const dataContacts = [
     email: "aryo@gmail.com",
     city: "Bandung",
     birthdate: new Date("1990/03/15"),
+    isFavorited: true,
   },
 ];
 
-function renderContact() {
-  dataContacts.forEach((contact) => {
+function renderContacts(contacts) {
+  contacts.forEach((contact) => {
+    const formattedDate = new Intl.DateTimeFormat("id-ID", {
+      dateStyle: "long",
+      timeZone: "Asia/Jakarta",
+    }).format(contact.birthdate);
+
     console.log(
       `
       🆔 : ${contact.id}
@@ -34,10 +42,11 @@ function renderContact() {
       📞 : ${contact.phone}
       📧 : ${contact.email}
       🏙️ : ${contact.city}
-      🎂 : ${contact.birthdate.toString()}
+      🎂 : ${formattedDate}
+      🌟 : ${contact.isFavorited ? "✅" : "❌"}
       `
     );
   });
 }
 
-renderContact();
+renderContacts(dataContacts);
