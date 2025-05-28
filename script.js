@@ -25,4 +25,19 @@ const dataContacts = [
   },
 ];
 
-console.log(dataContacts);
+function renderContact() {
+  dataContacts.forEach((contact) => {
+    console.log(
+      `
+      🆔 : ${contact.id}
+      👤 : ${contact.fullname}
+      📞 : ${contact.phone}
+      📧 : ${contact.email}
+      🏙️ : ${contact.city}
+      🎂 : ${contact.birthdate.toString()}
+      `
+    );
+  });
+}
+
+renderContact();
