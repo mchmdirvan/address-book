@@ -57,6 +57,7 @@ function searchContacts(contacts, keyword) {
   const foundContacts = contacts.filter((contact) => {
     return contact.fullname.toLowerCase().includes(keyword.toLowerCase());
   });
+
   renderContacts(foundContacts);
 }
 
@@ -79,6 +80,7 @@ function deleteContact(contacts, id) {
   const filteredContact = contacts.filter((contact) => {
     return contact.id !== id;
   });
+
   dataContacts = filteredContact;
   renderContacts(dataContacts);
 }
@@ -103,6 +105,7 @@ function showContact(contacts, id) {
   const contact = contacts.find((contact) => {
     return contact.id === id;
   });
+
   renderContacts([contact]);
 }
 
