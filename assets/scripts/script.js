@@ -84,7 +84,7 @@ function deleteContact(contacts, id) {
   const filteredContact = contacts.filter((contact) => {
     return contact.id !== id;
   });
-  const dataContacts = filteredContact;
+  dataContacts = filteredContact;
   renderContacts(dataContacts);
 }
 
