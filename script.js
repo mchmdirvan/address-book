@@ -79,6 +79,21 @@ function deleteContact(contacts, id) {
   renderContacts(dataContacts);
 }
 
+function updateContact(contacts, id, contactData) {
+  const updatedContacts = contacts.map((contact) => {
+    if (contact.id === id) {
+      return {
+        ...contact,
+        ...contactData,
+      };
+    } else {
+      return contact;
+    }
+  });
+  dataContacts = updatedContacts;
+  renderContacts(dataContacts);
+}
+
 // renderContacts(dataContacts);
 // searchContacts(dataContacts, "ad");
 
@@ -92,3 +107,12 @@ function deleteContact(contacts, id) {
 // });
 
 // deleteContact(dataContacts, 1);
+
+updateContact(dataContacts, 1, {
+  fullname: "Mochamad Irvan",
+  phone: +6281280907080,
+  email: "irvan@gmail.com",
+  city: "Jakarta",
+  birthdate: new Date("2000-10-10"),
+  isFavorited: true,
+});
