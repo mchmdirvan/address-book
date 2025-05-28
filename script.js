@@ -28,6 +28,10 @@ let dataContacts = [
   },
 ];
 
+// ------------------------------------------------------------------
+// FUNCTION
+// ------------------------------------------------------------------
+
 function renderContacts(contacts) {
   contacts.forEach((contact) => {
     const formattedDate = new Intl.DateTimeFormat("id-ID", {
@@ -94,6 +98,10 @@ function updateContact(contacts, id, contactData) {
   renderContacts(dataContacts);
 }
 
+// ------------------------------------------------------------------
+// PROGRAM
+// ------------------------------------------------------------------
+
 // renderContacts(dataContacts);
 // searchContacts(dataContacts, "ad");
 
@@ -108,11 +116,11 @@ function updateContact(contacts, id, contactData) {
 
 // deleteContact(dataContacts, 1);
 
-updateContact(dataContacts, 1, {
-  fullname: "Mochamad Irvan",
-  phone: +6281280907080,
-  email: "irvan@gmail.com",
-  city: "Jakarta",
-  birthdate: new Date("2000-10-10"),
-  isFavorited: true,
-});
+// updateContact(dataContacts, 1, {
+//   fullname: "Mochamad Irvan",
+//   phone: +6281280907080,
+//   email: "irvan@gmail.com",
+//   city: "Jakarta",
+//   birthdate: new Date("2000-10-10"),
+//   isFavorited: true,
+// });
