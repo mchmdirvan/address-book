@@ -49,4 +49,12 @@ function renderContacts(contacts) {
   });
 }
 
-renderContacts(dataContacts);
+function searchContacts(contacts, keyword) {
+  const foundContacts = contacts.filter((contact) => {
+    return contact.fullname.toLowerCase().includes(keyword.toLowerCase());
+  });
+  renderContacts(foundContacts);
+}
+
+// renderContacts(dataContacts);
+searchContacts(dataContacts, "ad");
