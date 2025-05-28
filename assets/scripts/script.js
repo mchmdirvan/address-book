@@ -28,6 +28,11 @@ let dataContacts = [
   },
 ];
 
+localStorage.setItem("data-contacts", JSON.stringify(dataContacts));
+// console.log(localStorage.getItem("data-contacts"));
+console.log(JSON.parse(localStorage.getItem("data-contacts")));
+console.log(dataContacts);
+
 // ------------------------------------------------------------------
 // FUNCTION
 // ------------------------------------------------------------------
@@ -110,7 +115,7 @@ function showContact(contacts, id) {
 // PROGRAM
 // ------------------------------------------------------------------
 
-// renderContacts(dataContacts);
+// renderContacts(JSON.parse(localStorage.getItem("data-contacts")));
 // searchContacts(dataContacts, "ad");
 
 // addContact(dataContacts, {
