@@ -98,6 +98,14 @@ function updateContact(contacts, id, contactData) {
   renderContacts(dataContacts);
 }
 
+function showContact(contacts, id) {
+  const contact = contacts.find((contact) => {
+    return contact.id === id;
+  });
+
+  renderContacts([contact]);
+}
+
 // ------------------------------------------------------------------
 // PROGRAM
 // ------------------------------------------------------------------
@@ -124,3 +132,5 @@ function updateContact(contacts, id, contactData) {
 //   birthdate: new Date("2000-10-10"),
 //   isFavorited: true,
 // });
+
+showContact(dataContacts, 1);
