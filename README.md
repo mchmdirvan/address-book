@@ -26,14 +26,6 @@ Address book is an application designed to store and manage contact information 
 - Javascript
 - Tailwind CSS
 
-## Flowchart
-
-Coming Soon... (Eraser.io)
-
-## Preview
-
-Coming Soon...
-
-## References
+## Flowchart, Preview, References
 
 Coming Soon...
