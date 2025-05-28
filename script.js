@@ -56,28 +56,29 @@ function searchContacts(contacts, keyword) {
   renderContacts(foundContacts);
 }
 
-function addContact(contact, newContact) {
-  const dataContact = {
+function addContact(contact, contactData) {
+  const newContact = {
     id: contact[contact.length - 1].id + 1,
-    fullname: newContact.fullname,
-    phone: newContact.phone,
-    email: newContact.email,
-    city: newContact.city,
-    birthdate: new Date(newContact.birthdate),
-    isFavorited: newContact.isFavorited,
+    fullname: contactData.fullname,
+    phone: contactData.phone,
+    email: contactData.email,
+    city: contactData.city,
+    birthdate: new Date(contactData.birthdate),
+    isFavorited: contactData.isFavorited,
   };
 
-  const newContacts = [...contact, dataContact];
+  const newContacts = [...contact, newContact];
   renderContacts(newContacts);
 }
 
 // renderContacts(dataContacts);
 // searchContacts(dataContacts, "ad");
-addContact(dataContacts, {
-  fullname: "Mochamad Irvan",
-  phone: +6281280907080,
-  email: "irvan@gmail.com",
-  city: "Jakarta",
-  birthdate: new Date("2000-10-10"),
-  isFavorited: true,
-});
+
+// addContact(dataContacts, {
+//   fullname: "Mochamad Irvan",
+//   phone: +6281280907080,
+//   email: "irvan@gmail.com",
+//   city: "Jakarta",
+//   birthdate: new Date("2000-10-10"),
+//   isFavorited: true,
+// });
