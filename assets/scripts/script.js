@@ -33,11 +33,19 @@ let dataContacts = [
 // ------------------------------------------------------------------
 
 function saveContacts(contacts) {
-  localStorage.setItem("address-book", JSON.stringify(contacts));
+  localStorage.setItem("data-contacts", JSON.stringify(contacts));
 }
 
 function loadContacts() {
-  return JSON.parse(localStorage.getItem("address-book"));
+  const contacts = localStorage.getItem("data-contacts");
+  if (!contacts) {
+    saveContacts([]);
+  }
+  try {
+    return JSON.parse(contacts);
+  } catch (error) {
+    console.error("Failed to load contacts", error);
+  }
 }
 
 // ------------------------------------------------------------------
@@ -129,7 +137,7 @@ function showContact(contacts, id) {
 // PROGRAM
 // ------------------------------------------------------------------
 
-// saveContacts(dataContacts);
+saveContacts(dataContacts);
 // renderContacts(loadContacts());
 
 // searchContacts(loadContacts(), "ad");
