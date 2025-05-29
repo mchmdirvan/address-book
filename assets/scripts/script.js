@@ -86,7 +86,8 @@ function addContact(contacts, contactData) {
   };
 
   dataContacts = [...contacts, newContact];
-  renderContacts(dataContacts);
+  saveContacts(dataContacts);
+  renderContacts(loadContacts());
 }
 
 function deleteContact(contacts, id) {
@@ -95,6 +96,7 @@ function deleteContact(contacts, id) {
   });
 
   dataContacts = filteredContact;
+  saveContacts(dataContacts);
   renderContacts(dataContacts);
 }
 
@@ -111,7 +113,8 @@ function updateContact(contacts, id, contactData) {
   });
 
   dataContacts = updatedContacts;
-  renderContacts(dataContacts);
+  saveContacts(dataContacts);
+  renderContacts(loadContacts());
 }
 
 function showContact(contacts, id) {
@@ -126,8 +129,10 @@ function showContact(contacts, id) {
 // PROGRAM
 // ------------------------------------------------------------------
 
-// renderContacts(dataContacts);
-// searchContacts(dataContacts, "ad");
+// saveContacts(dataContacts);
+// renderContacts(loadContacts());
+
+// searchContacts(loadContacts(), "ad");
 
 // addContact(dataContacts, {
 //   fullname: "Mochamad Irvan",
@@ -150,6 +155,3 @@ function showContact(contacts, id) {
 // });
 
 // showContact(dataContacts, 1);
-
-// saveContacts(dataContacts);
-// renderContacts(loadContacts());
