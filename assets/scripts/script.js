@@ -134,7 +134,7 @@ function showContact(contacts, id) {
 
 // searchContacts(loadContacts(), "ad");
 
-// addContact(dataContacts, {
+// addContact(loadContacts(), {
 //   fullname: "Mochamad Irvan",
 //   phone: +6281280907080,
 //   email: "irvan@gmail.com",
@@ -143,9 +143,9 @@ function showContact(contacts, id) {
 //   isFavorited: true,
 // });
 
-// deleteContact(dataContacts, 1);
+// deleteContact(loadContacts(), 5);
 
-// updateContact(dataContacts, 1, {
+// updateContact(loadContacts(), 1, {
 //   fullname: "Mochamad Irvan",
 //   phone: +6281280907080,
 //   email: "irvan@gmail.com",
