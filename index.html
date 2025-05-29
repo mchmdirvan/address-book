@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Address Book</title>
+    <title>Bookmate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <h1>Address Book</h1>
+    <header class="flex flex-row items-center justify-around py-5 bg-slate-50">
+      <h1 class="text-neutral-600 text-2xl">Bookmate</h1>
+      <input
+        type="text"
+        placeholder="Telusuri"
+        class="bg-slate-200 py-1 ps-5 w-[40rem] rounded-md focus:outline-none"
+      />
+      <img
+        src="https://api.dicebear.com/9.x/glass/svg?seed=Christian"
+        alt="avatar"
+        class="max-w-[35px] rounded-full"
+      />
+    </header>
+    <main></main>
     <script src="/assets/scripts/script.js"></script>
   </body>
 </html>
