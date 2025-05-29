@@ -29,15 +29,28 @@ let dataContacts = [
 ];
 
 // ------------------------------------------------------------------
+// STORAGE
+// ------------------------------------------------------------------
+
+function saveContacts(contacts) {
+  localStorage.setItem("address-book", JSON.stringify(contacts));
+}
+
+function loadContacts() {
+  return JSON.parse(localStorage.getItem("address-book"));
+}
+
+// ------------------------------------------------------------------
 // FUNCTION
 // ------------------------------------------------------------------
 
 function renderContacts(contacts) {
   contacts.forEach((contact) => {
+    const birthdate = new Date(contact.birthdate);
     const formattedDate = new Intl.DateTimeFormat("id-ID", {
       dateStyle: "long",
       timeZone: "Asia/Jakarta",
-    }).format(contact.birthdate);
+    }).format(birthdate);
 
     console.log(
       `
@@ -137,3 +150,6 @@ function showContact(contacts, id) {
 // });
 
 // showContact(dataContacts, 1);
+
+// saveContacts(dataContacts);
+// renderContacts(loadContacts());
