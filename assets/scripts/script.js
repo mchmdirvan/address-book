@@ -154,4 +154,4 @@ function showContact(contacts, id) {
 //   isFavorited: true,
 // });
 
-// showContact(dataContacts, 1);
+// showContact(loadContacts(), 1);
