@@ -176,7 +176,7 @@ function renderContacts() {
   contactListElement.innerHTML = contacts
     .map((contact) => {
       return `
-      <tr class="shadow-sm cursor-pointer text-sm">
+      <tr class="shadow-sm cursor-pointer text-sm hover:bg-slate-100 transition-all duration-500">
         <td class="ps-20 py-6">${contact.fullname}</td>
         <td>${contact.email}</td>
         <td>${contact.phone}</td>
