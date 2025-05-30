@@ -35,28 +35,46 @@
       <table class="w-full mt-5 rounded-md">
         <thead>
           <tr class="bg-slate-100">
-            <th class="py-3 text-start ps-5">Fullname</th>
-            <th class="py-3 text-start">Email</th>
-            <th class="py-3 text-start">Phone Number</th>
+            <th class="py-3 text-start font-medium ps-20">Fullname</th>
+            <th class="py-3 text-start font-medium">Email</th>
+            <th class="py-3 text-start font-medium">Phone Number</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr class="shadow-sm">
-            <td class="ps-5 py-2">Adhitya Sofyan</td>
+            <td class="ps-20 py-2">Adhitya Sofyan</td>
             <td>adhitya@gmail.com</td>
             <td>+6281280807070</td>
-            <td></td>
+            <td class="flex gap-5 p-2">
+              <div class="p-2 hover:bg-slate-200 rounded-full">
+                <i data-lucide="pencil" class="max-w-4 max-h-4"></i>
+              </div>
+              <div class="p-2 hover:bg-slate-200 rounded-full">
+                <i data-lucide="trash" class="max-w-4 max-h-4"></i>
+              </div>
+            </td>
           </tr>
           <tr class="shadow-sm">
-            <td class="ps-5 py-2">Adhitya Sofyan</td>
+            <td class="ps-20 py-2">Adhitya Sofyan</td>
             <td>adhitya@gmail.com</td>
             <td>+6281280807070</td>
-            <td></td>
+            <td class="flex gap-5 p-2">
+              <div class="p-2 hover:bg-slate-200 rounded-full">
+                <i data-lucide="pencil" class="max-w-4 max-h-4"></i>
+              </div>
+              <div class="p-2 hover:bg-slate-200 rounded-full">
+                <i data-lucide="trash" class="max-w-4 max-h-4"></i>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
     </main>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
     <script src="/assets/scripts/script.js"></script>
   </body>
 </html>
