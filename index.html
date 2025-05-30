@@ -6,21 +6,24 @@
     <title>Bookmate</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <header class="flex flex-row items-center justify-around py-5 bg-slate-50">
+  <body class="min-h-[100vh] flex flex-col">
+    <header class="flex flex-row items-center justify-around py-5 shadow-xl">
       <h1 class="text-neutral-600 text-2xl">Bookmate</h1>
+
       <input
         type="text"
         placeholder="Telusuri"
         class="bg-slate-200 py-2 ps-5 w-[40rem] rounded-md focus:outline-none"
       />
+
       <img
         src="https://api.dicebear.com/9.x/glass/svg?seed=Christian"
         alt="avatar"
         class="max-w-[35px] rounded-full"
       />
     </header>
-    <main class="py-5 px-20 text-slate-800">
+
+    <main class="flex-grow py-5 px-20 text-slate-800 bg-slate-50">
       <section class="flex justify-between">
         <div>
           <h2 class="font-semibold text-xl">Contacts</h2>
@@ -29,10 +32,11 @@
         <a
           href=""
           class="bg-blue-600 text-white h-fit px-7 py-2 rounded-full hover:bg-blue-800 text-sm font-semibold"
-          >Create Contact</a
+          >Add New Contact</a
         >
       </section>
-      <table class="w-full mt-5 rounded-md">
+
+      <table class="w-full mt-5 rounded-md bg-white">
         <thead>
           <tr class="bg-slate-100">
             <th class="py-3 text-start font-medium ps-20">Fullname</th>
@@ -41,11 +45,13 @@
             <th></th>
           </tr>
         </thead>
+
         <tbody id="contact-list">
           <!-- render-contacts -->
         </tbody>
       </table>
     </main>
+
     <script src="/assets/scripts/script.js"></script>
   </body>
 </html>
