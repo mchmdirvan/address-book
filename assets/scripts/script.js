@@ -134,37 +134,6 @@ function showContact(contacts, id) {
 }
 
 // ------------------------------------------------------------------
-// PROGRAM
-// ------------------------------------------------------------------
-
-// saveContacts(dataContacts);
-// displayContacts(loadContacts());
-
-// searchContacts(loadContacts(), "ad");
-
-// addContact(loadContacts(), {
-//   fullname: "Mochamad Irvan",
-//   phone: +6281280907080,
-//   email: "irvan@gmail.com",
-//   city: "Jakarta",
-//   birthdate: new Date("2000-10-10"),
-//   isFavorited: true,
-// });
-
-// deleteContact(loadContacts(), 5);
-
-// updateContact(loadContacts(), 1, {
-//   fullname: "Mochamad Irvan",
-//   phone: +6281280907080,
-//   email: "irvan@gmail.com",
-//   city: "Jakarta",
-//   birthdate: new Date("2000-10-10"),
-//   isFavorited: true,
-// });
-
-// showContact(loadContacts(), 1);
-
-// ------------------------------------------------------------------
 // DOM
 // ------------------------------------------------------------------
 
@@ -196,3 +165,34 @@ function renderContacts() {
 }
 
 renderContacts();
+
+// ------------------------------------------------------------------
+// PROGRAM
+// ------------------------------------------------------------------
+
+// saveContacts(dataContacts);
+// displayContacts(loadContacts());
+
+// searchContacts(loadContacts(), "ad");
+
+// addContact(loadContacts(), {
+//   fullname: "Mochamad Irvan",
+//   phone: +6281280907080,
+//   email: "irvan@gmail.com",
+//   city: "Jakarta",
+//   birthdate: new Date("2000-10-10"),
+//   isFavorited: true,
+// });
+
+// deleteContact(loadContacts(), 5);
+
+// updateContact(loadContacts(), 1, {
+//   fullname: "Mochamad Irvan",
+//   phone: +6281280907080,
+//   email: "irvan@gmail.com",
+//   city: "Jakarta",
+//   birthdate: new Date("2000-10-10"),
+//   isFavorited: true,
+// });
+
+// showContact(loadContacts(), 1);
