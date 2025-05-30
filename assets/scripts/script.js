@@ -39,7 +39,7 @@ function saveContacts(contacts) {
 function loadContacts() {
   const contacts = localStorage.getItem("data-contacts");
   if (!contacts) {
-    saveContacts([]);
+    saveContacts(dataContacts);
   }
   try {
     return JSON.parse(contacts);
@@ -52,7 +52,7 @@ function loadContacts() {
 // FUNCTION
 // ------------------------------------------------------------------
 
-function renderContacts(contacts) {
+function displayContacts(contacts) {
   contacts.forEach((contact) => {
     const birthdate = new Date(contact.birthdate);
     const formattedDate = new Intl.DateTimeFormat("id-ID", {
@@ -79,7 +79,7 @@ function searchContacts(contacts, keyword) {
     return contact.fullname.toLowerCase().includes(keyword.toLowerCase());
   });
 
-  renderContacts(foundContacts);
+  displayContacts(foundContacts);
 }
 
 function addContact(contacts, contactData) {
@@ -95,7 +95,7 @@ function addContact(contacts, contactData) {
 
   dataContacts = [...contacts, newContact];
   saveContacts(dataContacts);
-  renderContacts(loadContacts());
+  displayContacts(loadContacts());
 }
 
 function deleteContact(contacts, id) {
@@ -105,7 +105,7 @@ function deleteContact(contacts, id) {
 
   dataContacts = filteredContact;
   saveContacts(dataContacts);
-  renderContacts(dataContacts);
+  displayContacts(dataContacts);
 }
 
 function updateContact(contacts, id, contactData) {
@@ -122,7 +122,7 @@ function updateContact(contacts, id, contactData) {
 
   dataContacts = updatedContacts;
   saveContacts(dataContacts);
-  renderContacts(loadContacts());
+  displayContacts(loadContacts());
 }
 
 function showContact(contacts, id) {
@@ -130,15 +130,15 @@ function showContact(contacts, id) {
     return contact.id === id;
   });
 
-  renderContacts([contact]);
+  displayContacts([contact]);
 }
 
 // ------------------------------------------------------------------
 // PROGRAM
 // ------------------------------------------------------------------
 
-saveContacts(dataContacts);
-// renderContacts(loadContacts());
+// saveContacts(dataContacts);
+// displayContacts(loadContacts());
 
 // searchContacts(loadContacts(), "ad");
 
@@ -163,3 +163,36 @@ saveContacts(dataContacts);
 // });
 
 // showContact(loadContacts(), 1);
+
+// ------------------------------------------------------------------
+// DOM
+// ------------------------------------------------------------------
+
+function renderContacts() {
+  contacts = loadContacts();
+
+  const contactListElement = document.getElementById("contact-list");
+
+  contactListElement.innerHTML = contacts
+    .map((contact) => {
+      return `
+      <tr class="shadow-sm">
+      <td class="ps-20 py-2">${contact.fullname}</td>
+      <td>${contact.email}</td>
+      <td>${contact.phone}</td>
+      <td class="flex gap-5 p-2">
+        <button class="p-2 hover:bg-slate-200 rounded-full">
+        <svg class="max-w-4 max-h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-icon lucide-trash"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+      
+        </button>
+        <button class="p-2 hover:bg-slate-200 rounded-full">
+        <svg class="max-w-4 max-h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+        </button>
+      </td>
+      </tr>
+    `;
+    })
+    .join("");
+}
+
+renderContacts();
