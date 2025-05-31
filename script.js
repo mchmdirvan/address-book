@@ -34,6 +34,7 @@ let dataContacts = [
 
 function saveContacts(contacts) {
   localStorage.setItem("data-contacts", JSON.stringify(contacts));
+  renderContacts();
 }
 
 function loadContacts() {
