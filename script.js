@@ -87,7 +87,7 @@ function renderContacts() {
                 <circle cx="12" cy="12" r="3" />
               </svg>
             </button>
-            
+
             <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
               <svg
                 class="max-w-4 max-h-4"
@@ -109,7 +109,10 @@ function renderContacts() {
               </svg>
             </button>
 
-            <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
+            <button
+              onclick="deleteContact(${contact.id})"
+              class="p-2 hover:bg-gray-200 rounded-full cursor-pointer"
+            >
               <svg
                 class="max-w-4 max-h-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,8 +137,6 @@ function renderContacts() {
     })
     .join("");
 }
-
-renderContacts();
 
 // ------------------------------------------------------------------
 // FUNCTION
@@ -187,14 +188,14 @@ function addContact(contacts, contactData) {
   displayContacts(loadContacts());
 }
 
-function deleteContact(contacts, id) {
+function deleteContact(id) {
+  const contacts = loadContacts();
   const filteredContact = contacts.filter((contact) => {
     return contact.id !== id;
   });
 
-  dataContacts = filteredContact;
-  saveContacts(dataContacts);
-  displayContacts(dataContacts);
+  saveContacts(filteredContact);
+  renderContacts(filteredContact);
 }
 
 function updateContact(contacts, id, contactData) {
@@ -225,30 +226,4 @@ function showContact(contacts, id) {
 // ------------------------------------------------------------------
 // PROGRAM
 // ------------------------------------------------------------------
-
-// saveContacts(dataContacts);
-// displayContacts(loadContacts());
-
-// searchContacts(loadContacts(), "ad");
-
-// addContact(loadContacts(), {
-//   fullname: "Mochamad Irvan",
-//   phone: +6281280907080,
-//   email: "irvan@gmail.com",
-//   city: "Jakarta",
-//   birthdate: new Date("2000-10-10"),
-//   isFavorited: true,
-// });
-
-// deleteContact(loadContacts(), 5);
-
-// updateContact(loadContacts(), 1, {
-//   fullname: "Mochamad Irvan",
-//   phone: +6281280907080,
-//   email: "irvan@gmail.com",
-//   city: "Jakarta",
-//   birthdate: new Date("2000-10-10"),
-//   isFavorited: true,
-// });
-
-// showContact(loadContacts(), 1);
+renderContacts();
