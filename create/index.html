@@ -4,6 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Contact | Bookmate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body
+    class="min-h-[100vh] min-w-[100vw] p-5 flex flex-row bg-red-200 bg-white"
+  >
+    <aside class="bg-slate-100 rounded-xl p-7">
+      <h1 class="text-black text-2xl font-semibold pb-8">Bookmate</h1>
+
+      <nav class="space-y-3">
+        <a
+          href="/create/"
+          class="flex gap-3 items-center bg-black text-white py-2 px-4 rounded-md hover:bg-slate-800 transition-all duration-300 text-sm font-semibold"
+        >
+          <i data-lucide="circle-plus"></i>
+          <p>Create New Contacts</p>
+        </a>
+        <a
+          href=""
+          class="flex gap-3 items-center bg-black text-white py-2 px-4 rounded-md hover:bg-slate-800 transition-all duration-300 text-sm font-semibold"
+        >
+          <i data-lucide="user-round"></i>
+          <p>Contacts</p>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="bg-slate-100 rounded-xl ms-5 p-7 flex-grow"></main>
+
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="/assets/scripts/script.js"></script>
+  </body>
 </html>
