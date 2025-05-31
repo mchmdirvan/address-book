@@ -61,13 +61,13 @@ function renderContacts() {
     .map((contact) => {
       return `
         <tr
-          class="shadow-sm text-sm hover:bg-slate-100 transition-all duration-500"
+          class="shadow-sm text-sm hover:bg-gray-100 transition-all duration-500"
         >
           <td class="ps-20 py-6">${contact.fullname}</td>
           <td>${contact.email}</td>
           <td>${contact.phone}</td>
           <td class="flex gap-5 justify-center p-3">
-            <button class="p-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
               <svg
                 class="max-w-4 max-h-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ function renderContacts() {
               </svg>
             </button>
             
-            <button class="p-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
               <svg
                 class="max-w-4 max-h-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ function renderContacts() {
               </svg>
             </button>
 
-            <button class="p-2 hover:bg-slate-200 rounded-full cursor-pointer">
+            <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
               <svg
                 class="max-w-4 max-h-4"
                 xmlns="http://www.w3.org/2000/svg"
