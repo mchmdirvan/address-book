@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Contact | Bookmate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="min-h-[100vh] min-w-[100vw] p-5 flex flex-row bg-red-200 bg-white"
+  >
+    <aside class="bg-gray-100 rounded-xl p-7">
+      <h1 class="text-black text-2xl font-semibold pb-8">Bookmate</h1>
+
+      <nav class="space-y-3">
+        <a
+          href="/create/"
+          class="flex gap-3 items-center bg-gray-200 py-2 px-4 rounded-md hover:bg-gray-300 transition-all duration-300 text-sm font-semibold"
+          onclick="event.preventDefault()"
+        >
+          <i data-lucide="circle-plus"></i>
+          <p>Create New Contacts</p>
+        </a>
+        <a
+          href="/index.html"
+          class="flex gap-3 items-center py-2 px-4 rounded-md hover:bg-gray-300 transition-all duration-300 text-sm font-semibold"
+        >
+          <i data-lucide="user-round"></i>
+          <p>Contacts</p>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="bg-gray-100 rounded-xl ms-5 py-10 px-60 flex-grow">
+      <section class="space-y-2">
+        <h2 class="font-semibold text-3xl">Edit Contact</h2>
+        <h3 class="text-sm text-gray-800">
+          Fill out the form below to edit contact
+        </h3>
+      </section>
+
+      <form method="post" id="contact-form" class="mt-5 space-y-5">
+        <div class="flex flex-col space-y-1">
+          <label class="text-sm" for="fullname">Fullname</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="text"
+            name="fullname"
+            id="fullname"
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div class="flex flex-col space-y-1">
+          <label class="text-sm" for="phone">Phone</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="+62-812-8080-9090"
+          />
+        </div>
+
+        <div class="flex flex-col space-y-1">
+          <label class="text-sm" for="email">Email</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="johndoe@example.com"
+          />
+        </div>
+
+        <div class="flex flex-col space-y-1">
+          <label class="text-sm" for="city">City</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Jakarta"
+          />
+        </div>
+
+        <div class="flex flex-col space-y-1">
+          <label class="text-sm" for="bitrhdate">Birthdate</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="date"
+            name="birthdate"
+            id="birthdate"
+          />
+        </div>
+
+        <div class="flex flex-col items-start space-y-1">
+          <label class="text-sm" for="isFavorited">Favorite</label>
+          <input
+            class="bg-white border border-gray-300 py-1 px-5 rounded-md placeholder:text-xs focus:outline-gray-400"
+            type="checkbox"
+            name="isFavorited"
+            id="isFavorited"
+            value="true"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="bg-gray-300 w-full py-2 px-4 rounded-md hover:bg-gray-300 transition-all duration-300 text-sm font-semibold"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+
+    <script src="/storage.js"></script>
+    <script src="/create/script.js"></script>
+  </body>
+</html>
