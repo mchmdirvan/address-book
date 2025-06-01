@@ -48,12 +48,20 @@
           <p class="text-xs">Number of contacts: 20</p>
         </div>
 
-        <form>
+        <form id="search-contacts" method="get" class="flex items-center gap-2">
           <input
+            id="search-input"
+            name="q"
             type="text"
             placeholder="Search..."
             class="bg-white py-2 ps-5 w-[40rem] rounded-md focus:outline-none"
           />
+          <button
+            type="submit"
+            class="bg-white p-2 rounded-md hover:bg-gray-200 transition-all duration-300 cursor-pointer"
+          >
+            <i data-lucide="search"></i>
+          </button>
         </form>
       </section>
 
