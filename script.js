@@ -1,10 +1,7 @@
-// ------------------------------------------------------------------
-// DOM
-// ------------------------------------------------------------------
+const contactListElement = document.getElementById("contact-list");
 
 function renderContacts() {
   contacts = loadContacts();
-  const contactListElement = document.getElementById("contact-list");
 
   contactListElement.innerHTML = contacts
     .map((contact) => {
@@ -91,28 +88,6 @@ function renderContacts() {
 // FUNCTION
 // ------------------------------------------------------------------
 
-function displayContacts(contacts) {
-  contacts.forEach((contact) => {
-    const birthdate = new Date(contact.birthdate);
-    const formattedDate = new Intl.DateTimeFormat("id-ID", {
-      dateStyle: "long",
-      timeZone: "Asia/Jakarta",
-    }).format(birthdate);
-
-    console.log(
-      `
-      🆔 : ${contact.id}
-      👤 : ${contact.fullname}
-      📞 : ${contact.phone}
-      📧 : ${contact.email}
-      🏙️ : ${contact.city}
-      🎂 : ${formattedDate}
-      🌟 : ${contact.isFavorited ? "✅" : "❌"}
-      `
-    );
-  });
-}
-
 function searchContacts(contacts, keyword) {
   const foundContacts = contacts.filter((contact) => {
     return contact.fullname.toLowerCase().includes(keyword.toLowerCase());
@@ -159,4 +134,5 @@ function showContact(contacts, id) {
 // ------------------------------------------------------------------
 // PROGRAM
 // ------------------------------------------------------------------
+
 renderContacts();
