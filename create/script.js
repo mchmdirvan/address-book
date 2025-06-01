@@ -14,8 +14,8 @@ function addContact(event) {
     phone: contactFormData.get("phone"),
     email: contactFormData.get("email"),
     city: contactFormData.get("city"),
-    birthdate: contactFormData.get("birthdate"),
-    // isFavorited: contactFormData.get("isFavorited"),
+    birthdate: new Date(contactFormData.get("birthdate")),
+    isFavorited: Boolean(contactFormData.get("isFavorited")),
   };
 
   const updateContacts = [...contacts, newContact];
