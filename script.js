@@ -16,8 +16,9 @@ function renderContacts() {
     ? searchContacts(contacts, keyword)
     : contacts;
 
-  contactListElement.innerHTML = contactToRender.map((contact) => {
-    return `
+  contactListElement.innerHTML = contactToRender
+    .map((contact) => {
+      return `
       <tr
         class="shadow-sm text-sm hover:bg-gray-100 transition-all duration-500"
       >
@@ -98,7 +99,8 @@ function renderContacts() {
         </td>
       </tr>
     `;
-  });
+    })
+    .join("");
 }
 
 function searchContacts(contacts, keyword) {
