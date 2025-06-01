@@ -1,8 +1,8 @@
-# Address Book
+# Bookmate
 
-📇 **Address Book** - A simple contact management application
+📇 **Bookmate** - A simple contact management application
 
-Address book is an application designed to store and manage contact information for important individuals in your network. It serves as a digital address book, allowing you to maintain essential communication details for professional and personal connections.
+Bookmate is an application designed to store and manage contact information for important individuals in your network. It serves as a digital address book, allowing you to maintain essential communication details for professional and personal connections.
 
 ## Links
 
