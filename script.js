@@ -25,7 +25,10 @@ function renderContacts() {
         <td>${contact.email}</td>
         <td>${contact.phone}</td>
         <td class="flex gap-5 justify-center p-3">
-          <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
+          <a
+            href="/contact/?id=${contact.id}"
+            class="p-2 hover:bg-gray-200 rounded-full cursor-pointer"
+          >
             <svg
               class="max-w-4 max-h-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +47,12 @@ function renderContacts() {
               />
               <circle cx="12" cy="12" r="3" />
             </svg>
-          </button>
+          </a>
 
-          <button class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
+          <a
+            href="/edit/?id=${contact.id}"
+            class="p-2 hover:bg-gray-200 rounded-full cursor-pointer"
+          >
             <svg
               class="max-w-4 max-h-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +71,7 @@ function renderContacts() {
               />
               <path d="m15 5 4 4" />
             </svg>
-          </button>
+          </a>
 
           <button
             onclick="deleteContact(${contact.id})"
