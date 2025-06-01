@@ -6,8 +6,8 @@ Address book is an application designed to store and manage contact information 
 
 ## Links
 
-- 🌍 URL: [https://address-boox.vercel.app/](https://address-boox.vercel.app/)
-- 📦 Repository: <https://github.com/mchmdirvan/address-book>
+- 🌍 URL: [https://booxmate.vercel.app/](https://booxmate.vercel.app/)
+- 📦 Repository: <https://github.com/mchmdirvan/bookmate>
 
 ## Features
 
