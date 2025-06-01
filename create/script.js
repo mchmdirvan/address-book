@@ -20,6 +20,9 @@ function addContact(event) {
 
   const updateContacts = [...contacts, newContact];
   saveContacts(updateContacts);
+
+  contactFormElement.reset();
+  alert("Contact berhasil ditambahkan!");
 }
 
 contactFormElement.addEventListener("submit", addContact);
