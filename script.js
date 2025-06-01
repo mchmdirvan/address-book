@@ -29,33 +29,11 @@ let dataContacts = [
 ];
 
 // ------------------------------------------------------------------
-// STORAGE
-// ------------------------------------------------------------------
-
-function saveContacts(contacts) {
-  localStorage.setItem("data-contacts", JSON.stringify(contacts));
-  renderContacts();
-}
-
-function loadContacts() {
-  const contacts = localStorage.getItem("data-contacts");
-  if (!contacts) {
-    saveContacts(dataContacts);
-  }
-  try {
-    return JSON.parse(contacts);
-  } catch (error) {
-    console.error("Failed to load contacts", error);
-  }
-}
-
-// ------------------------------------------------------------------
 // DOM
 // ------------------------------------------------------------------
 
 function renderContacts() {
   contacts = loadContacts();
-
   const contactListElement = document.getElementById("contact-list");
 
   contactListElement.innerHTML = contacts
@@ -171,22 +149,6 @@ function searchContacts(contacts, keyword) {
   });
 
   displayContacts(foundContacts);
-}
-
-function addContact(contacts, contactData) {
-  const newContact = {
-    id: contacts[contacts.length - 1].id + 1,
-    fullname: contactData.fullname,
-    phone: contactData.phone,
-    email: contactData.email,
-    city: contactData.city,
-    birthdate: new Date(contactData.birthdate),
-    isFavorited: contactData.isFavorited,
-  };
-
-  dataContacts = [...contacts, newContact];
-  saveContacts(dataContacts);
-  displayContacts(loadContacts());
 }
 
 function deleteContact(id) {
