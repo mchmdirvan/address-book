@@ -1,5 +1,6 @@
 const contactListElement = document.getElementById("contact-list");
 const searchInputElement = document.getElementById("search-input");
+const sumContactElement = document.getElementById("sum-contacts");
 
 // ------------------------------------------------------------------
 // FUNCTION
@@ -15,6 +16,8 @@ function renderContacts() {
   const contactToRender = keyword
     ? searchContacts(contacts, keyword)
     : contacts;
+
+  sumContactElement.innerHTML = `<span>${contacts.length}</span>`;
 
   contactListElement.innerHTML = contactToRender
     .map((contact) => {
