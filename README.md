@@ -48,12 +48,12 @@ flowchart TD
     G -->|Edit Contact| L[Show Edit Form with Data]
     L --> M[Modify Contact Details]
     M --> N[Update Contacts Array]
-    N --> O[Save to Local Storage]
-    O --> F
+    N --> K[Save to Local Storage]
+    K --> F
 
     G -->|Delete Contact| P[Remove from Contacts Array]
-    P --> Q[Save to Local Storage]
-    Q --> F
+    P --> K[Save to Local Storage]
+    K --> F
 
     G -->|Search| R[Filter Contacts Display]
     R --> F
