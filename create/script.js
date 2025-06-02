@@ -6,6 +6,12 @@ function addContact(event) {
 
   const contactFormData = new FormData(contactFormElement);
 
+  const birthdate = new Date(contactFormData.get("birthdate"));
+  const formattedDate = new Intl.DateTimeFormat("id-ID", {
+    dateStyle: "long",
+    timeZone: "Asia/Jakarta",
+  }).format(birthdate);
+
   const newId = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
 
   const newContact = {
@@ -14,7 +20,7 @@ function addContact(event) {
     phone: contactFormData.get("phone"),
     email: contactFormData.get("email"),
     city: contactFormData.get("city"),
-    birthdate: new Date(contactFormData.get("birthdate")),
+    birthdate: formattedDate,
     isFavorited: Boolean(contactFormData.get("isFavorited")),
   };
 
