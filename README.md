@@ -1,6 +1,8 @@
 # Bookmate
 
-📇 **Bookmate** - A simple contact management application
+![header](assets/images/header.png)
+
+> 📇 **Bookmate** - A simple contact management application
 
 Bookmate is an application designed to store and manage contact information for important individuals in your network. It serves as a digital address book, allowing you to maintain essential communication details for professional and personal connections.
 
@@ -24,6 +26,42 @@ Bookmate is an application designed to store and manage contact information for 
 - Javascript
 - Tailwind CSS
 
-## Flowchart, Preview, References
+## Flowchart
 
-Coming Soon...
+```mermaid
+flowchart TD
+    A[Start Application] --> B{Check Local Storage}
+    B -->|Exists| C[Load Contacts from Local Storage]
+    B -->|Empty/Not Exists| D[Initialize Default Data]
+    D --> E[Save Initial Data to Local Storage]
+    E --> F[Display Contacts List]
+    C --> F
+
+    F --> G{User Action}
+
+    G -->|Create New| H[Show Create Form]
+    H --> I[Fill Contact Details]
+    I --> J[Add to Contacts Array]
+    J --> K[Save to Local Storage]
+    K --> F
+
+    G -->|Edit Contact| L[Show Edit Form with Data]
+    L --> M[Modify Contact Details]
+    M --> N[Update Contacts Array]
+    N --> O[Save to Local Storage]
+    O --> F
+
+    G -->|Delete Contact| P[Remove from Contacts Array]
+    P --> Q[Save to Local Storage]
+    Q --> F
+
+    G -->|Search| R[Filter Contacts Display]
+    R --> F
+
+    G -->|View Contact| S[Show Contact Details]
+    S --> F
+```
+
+## References
+
+![header](assets/images/references.png)
