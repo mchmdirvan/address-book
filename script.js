@@ -17,7 +17,7 @@ function renderContacts() {
     ? searchContacts(contacts, keyword)
     : contacts;
 
-  sumContactElement.innerHTML = `<span>${contacts.length}</span>`;
+  sumContactElement.innerHTML = `${contacts.length}`;
 
   contactListElement.innerHTML = contactToRender
     .map((contact) => {
