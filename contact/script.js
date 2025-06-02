@@ -1,11 +1,16 @@
 const showContactElement = document.getElementById("show-contact");
 
-function showContact() {
-  const contacts = loadContacts();
-
+function getID() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const id = params.get("id");
+
+  return id;
+}
+
+function showContact() {
+  const contacts = loadContacts();
+  const id = getID();
 
   const findContact = contacts.find((contact) => {
     return contact.id == id;
@@ -13,7 +18,7 @@ function showContact() {
 
   showContactElement.innerHTML = `
     <div class="flex justify-between">
-      <h2 class="text-xl font-semibold">Adhitya Sofyan</h2>
+      <h2 class="text-xl font-semibold">${findContact.fullname}</h2>
 
       <div class="flex">
         <a
@@ -40,9 +45,7 @@ function showContact() {
           </svg>
         </a>
 
-        <button onclick="deleteContact(${
-          findContact.id
-        })" class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
+        <button onclick="deleteContact()" class="p-2 hover:bg-gray-200 rounded-full cursor-pointer">
           <svg
             class="max-w-4 max-h-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +77,20 @@ function showContact() {
       <p>🌟 : ${findContact.isFavorited ? "✅" : "❌"}</p>
     </div>
   `;
+}
+
+function deleteContact() {
+  const contacts = loadContacts();
+  const id = getID();
+  console.log(id);
+
+  const filteredContact = contacts.filter((contact) => {
+    return contact.id != id;
+  });
+
+  saveContacts(filteredContact);
+
+  window.location.href = "/";
 }
 
 showContact();
