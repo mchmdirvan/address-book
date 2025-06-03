@@ -1,17 +1,9 @@
 const showContactElement = document.getElementById("show-contact");
 
-function getID() {
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const id = params.get("id");
-
-  return id;
-}
+const contacts = loadContacts();
+const id = getID();
 
 function showContact() {
-  const contacts = loadContacts();
-  const id = getID();
-
   const findContact = contacts.find((contact) => {
     return contact.id == id;
   });
@@ -80,16 +72,11 @@ function showContact() {
 }
 
 function deleteContact() {
-  const contacts = loadContacts();
-  const id = getID();
-  console.log(id);
-
   const filteredContact = contacts.filter((contact) => {
     return contact.id != id;
   });
 
   saveContacts(filteredContact);
-
   window.location.href = "/";
 }
 
