@@ -49,7 +49,7 @@ function updateContact(event) {
   }).format(birthdate);
 
   const newContact = {
-    id: id,
+    id: Number(id),
     fullname: contactFormData.get("fullname"),
     phone: contactFormData.get("phone"),
     email: contactFormData.get("email"),
