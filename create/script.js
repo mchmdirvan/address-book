@@ -5,14 +5,8 @@ function addContact(event) {
   const contacts = loadContacts();
 
   const contactFormData = new FormData(contactFormElement);
-
-  const birthdate = new Date(contactFormData.get("birthdate"));
-  const formattedDate = new Intl.DateTimeFormat("id-ID", {
-    dateStyle: "long",
-    timeZone: "Asia/Jakarta",
-  }).format(birthdate);
-
-  const newId = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
+  formattedDate = formattedDate(contactFormData);
+  const newId = generateID(contacts);
 
   const newContact = {
     id: newId,
@@ -28,7 +22,7 @@ function addContact(event) {
   saveContacts(updateContacts);
 
   contactFormElement.reset();
-  alert("Contact berhasil ditambahkan!");
+  window.location.href = "/";
 }
 
 contactFormElement.addEventListener("submit", addContact);

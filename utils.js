@@ -14,6 +14,11 @@ function getID() {
   return id;
 }
 
+function generateID(contacts) {
+  newID = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
+  return newID;
+}
+
 function formattedDate(contactFormData) {
   const birthdate = new Date(contactFormData.get("birthdate"));
   const formattedDate = new Intl.DateTimeFormat("id-ID", {
