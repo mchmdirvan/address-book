@@ -2,16 +2,9 @@ const contactListElement = document.getElementById("contact-list");
 const searchInputElement = document.getElementById("search-input");
 const sumContactElement = document.getElementById("sum-contacts");
 
-// ------------------------------------------------------------------
-// FUNCTION
-// ------------------------------------------------------------------
-
 function renderContacts() {
   const contacts = loadContacts();
-
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const keyword = params.get("q");
+  const keyword = getParams();
 
   const contactToRender = keyword
     ? searchContacts(contacts, keyword)
@@ -126,9 +119,5 @@ function deleteContact(id) {
   saveContacts(filteredContact);
   renderContacts();
 }
-
-// ------------------------------------------------------------------
-// PROGRAM
-// ------------------------------------------------------------------
 
 renderContacts();
