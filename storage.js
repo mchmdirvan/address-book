@@ -29,18 +29,35 @@ let dataContacts = [
 ];
 
 function saveContacts(contacts) {
-  localStorage.setItem("data-contacts", JSON.stringify(contacts));
+  try {
+    localStorage.setItem("data-contacts", JSON.stringify(contacts));
+    return true;
+  } catch (error) {
+    console.error("Failed to save contacts:", error);
+    showFeedback("Error saving contacts. Please try again.", "error");
+    return false;
+  }
 }
 
 function loadContacts() {
-  const contacts = localStorage.getItem("data-contacts");
-  if (!contacts) {
-    saveContacts(dataContacts);
-    renderContacts();
-  }
   try {
+    const contacts = localStorage.getItem("data-contacts");
+    
+    if (!contacts) {
+      saveContacts(dataContacts);
+      return dataContacts;
+    }
+    
     return JSON.parse(contacts);
   } catch (error) {
-    console.error("Failed to load contacts", error);
+    console.error("Failed to load contacts:", error);
+    showFeedback("Error loading contacts. Using default data.", "error");
+    return dataContacts;
   }
+}
+
+// Get contact by ID (reduces repeated find operations)
+function getContactById(id) {
+  const contacts = loadContacts();
+  return contacts.find(contact => contact.id == id);
 }
