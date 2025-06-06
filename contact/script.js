@@ -1,3 +1,6 @@
+import { loadContacts, saveContacts } from "/storage.js";
+import { getID } from "/utils.js";
+
 const showContactElement = document.getElementById("show-contact");
 
 const contacts = loadContacts();
@@ -80,4 +83,5 @@ function deleteContact() {
   window.location.href = "/";
 }
 
+window.deleteContact = deleteContact;
 showContact();

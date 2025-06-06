@@ -1,3 +1,6 @@
+import { loadContacts, saveContacts } from "/storage.js";
+import { getParams } from "/utils.js";
+
 const contactListElement = document.getElementById("contact-list");
 const searchInputElement = document.getElementById("search-input");
 const sumContactElement = document.getElementById("sum-contacts");
@@ -120,4 +123,5 @@ function deleteContact(id) {
   renderContacts();
 }
 
+window.deleteContact = deleteContact;
 renderContacts();
