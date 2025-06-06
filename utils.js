@@ -1,4 +1,4 @@
-function getParams() {
+export function getParams() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const keyword = params.get("q");
@@ -6,7 +6,7 @@ function getParams() {
   return keyword;
 }
 
-function getID() {
+export function getID() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const id = params.get("id");
@@ -14,14 +14,14 @@ function getID() {
   return id;
 }
 
-function generateID(contacts) {
-  newID = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
+export function generateID(contacts) {
+  const newID = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
   return newID;
 }
 
-function formattedDate(contactFormData) {
+export function formattedDate(contactFormData) {
   const birthdate = new Date(contactFormData.get("birthdate"));
-  const formattedDate = new Intl.DateTimeFormat("id-ID", {
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
     timeZone: "Asia/Jakarta",
   }).format(birthdate);

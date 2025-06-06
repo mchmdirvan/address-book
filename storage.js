@@ -28,19 +28,20 @@ let dataContacts = [
   },
 ];
 
-function saveContacts(contacts) {
+export function saveContacts(contacts) {
   localStorage.setItem("data-contacts", JSON.stringify(contacts));
 }
 
-function loadContacts() {
+export function loadContacts() {
   const contacts = localStorage.getItem("data-contacts");
   if (!contacts) {
     saveContacts(dataContacts);
-    renderContacts();
+    return dataContacts;
   }
   try {
     return JSON.parse(contacts);
   } catch (error) {
     console.error("Failed to load contacts", error);
+    return dataContacts;
   }
 }

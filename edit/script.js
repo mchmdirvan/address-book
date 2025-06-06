@@ -1,16 +1,19 @@
+import { loadContacts, saveContacts } from "/storage.js";
+import { getID, formattedDate } from "/utils.js";
+
+const birthdateInputElement = document.getElementById("birthdate");
+const isFavoritedElement = document.getElementById("isFavorited");
 const fullnameInputElement = document.getElementById("fullname");
 const phoneInputElement = document.getElementById("phone");
 const emailInputElement = document.getElementById("email");
 const cityInputElement = document.getElementById("city");
-const birthdateInputElement = document.getElementById("birthdate");
-const isFavoritedElement = document.getElementById("isFavorited");
 
 const contactFormElement = document.getElementById("contact-form");
 
 const contacts = loadContacts();
 const id = getID();
 
-const setContact = contacts.find((contact) => {
+contacts.find((contact) => {
   if (id == contact.id) {
     fullnameInputElement.value = contact.fullname;
     phoneInputElement.value = contact.phone;
@@ -27,7 +30,7 @@ function updateContact(event) {
   event.preventDefault();
 
   const contactFormData = new FormData(contactFormElement);
-  formattedDate = formattedDate(contactFormData);
+  const newDate = formattedDate(contactFormData);
 
   const newContact = {
     id: Number(id),
@@ -35,7 +38,7 @@ function updateContact(event) {
     phone: contactFormData.get("phone"),
     email: contactFormData.get("email"),
     city: contactFormData.get("city"),
-    birthdate: formattedDate,
+    birthdate: newDate,
     isFavorited: Boolean(contactFormData.get("isFavorited")),
   };
 

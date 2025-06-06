@@ -1,3 +1,6 @@
+import { loadContacts, saveContacts } from "/storage.js";
+import { formattedDate, generateID } from "/utils.js";
+
 const contactFormElement = document.getElementById("contact-form");
 
 function addContact(event) {
@@ -5,7 +8,7 @@ function addContact(event) {
   const contacts = loadContacts();
 
   const contactFormData = new FormData(contactFormElement);
-  formattedDate = formattedDate(contactFormData);
+  const newDate = formattedDate(contactFormData);
   const newId = generateID(contacts);
 
   const newContact = {
@@ -14,7 +17,7 @@ function addContact(event) {
     phone: contactFormData.get("phone"),
     email: contactFormData.get("email"),
     city: contactFormData.get("city"),
-    birthdate: formattedDate,
+    birthdate: newDate,
     isFavorited: Boolean(contactFormData.get("isFavorited")),
   };
 
